@@ -3,7 +3,7 @@ layout:     post
 title:      "2 约束"
 subtitle:   ""
 author:     "xx锐"
-header-img: "img/algorithm/bg.jpg"
+header-img: "img/posts/constraint.jpeg"
 header-mask:  0.5
 catalog: true
 tags:
