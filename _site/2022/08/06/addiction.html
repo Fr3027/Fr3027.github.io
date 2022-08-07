@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="全栈开发 | 不可知论者 | xx锐，Web & Full-stack Engineer | xx锐的个人博客啊">
+    <meta name="keyword"  content="xx Rui, 后端, 全栈, xx锐 Blog, 博客，Web, Css, Javascript, Java">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <title>1 成瘾 - xx锐的博客 | xx Rui Blog</title>
+
+    <link rel="canonical" href="http://localhost:4000/2022/08/06/addiction.html">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">xx Rui Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tags.html">Tags</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background: url('/img/algorithm/bg.jpg') center center no-repeat;
+        background-size: 100%;
+    }
+
+    
+    header.intro-header .header-mask{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgba(0,0,0, 0.5);
+    }
+    
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#感悟" title="感悟">感悟</a>
+                        
+                    </div>
+                    <h1>1 成瘾</h1>
+                    
+                    
+                    <h2 class="subheading"></h2>
+                    
+                    <span class="meta">Posted by xx锐 on August 6, 2022</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+				<h4 id="前言">前言</h4>
+
+<p>大家好我是xx锐，今天咱们来聊一聊成瘾这件事，平日里大家都有许多经历，比如网瘾、消费瘾、信息流瘾，咱们把类似这种<strong>做了让自己爽还想接着做的事情统称为瘾</strong>，这样的事情有很多并且每个人情况不一样也就不一一举例了。下面，咱们谈谈“成瘾”有哪些积极作用有消极作用和如何“戒瘾”。</p>
+
+<h4 id="瘾的消极作用">瘾的消极作用</h4>
+
+<p>平常大家提到谁谁谁上瘾了，多是带着贬义的语气，比如网瘾。70年代出生的父母们深刻体会了学习好能对个人阶级和财富有质的飞跃，看到自己的孩子玩游戏一幅恨铁不成刚的表情，甚至有的把孩子送去杨教授那电一电。再就是消费瘾，每天逛各种购物平台或者线下各商场，见到啥感兴趣的，就要买买买，没钱了就刷信用卡，到最后各种贷款不断、信用受损，个人生活变得一团糟，甚至还会牵扯到自己家人。还有刷剧瘾，好多人追影视剧更新，每天到点了赶紧打开手机电脑把今天的推送看完。同时他们也多是短视频的受众，短视频时间短、刺激性强，一旦没忍住打开一个短视频，就会停不下来，一个接一个的往下刷，因为内容是为了刺激你脑内分泌多巴胺的腺体来精心编排的，让你像被吊着萝卜的驴一样，傻傻地被操纵。</p>
+
+<h4 id="莫要错误归因">莫要错误归因</h4>
+
+<p>前边说了这么多瘾的坏处，想必有些人已经开始习得性反思自己了哈哈。可是，看事情不能只看表面，咱们来细细分析上面提到的三种瘾分别背了什么锅、该不该背、以及这锅应该甩给谁。</p>
+
+<p>首先是<strong>网瘾</strong>，咱们简单作个分类：学习时期的网瘾和工作时期的网瘾。这里碍于篇幅只说一下学习时期的网瘾，该学习的时候你却成天玩游戏！此时网瘾背了成绩下降的锅。咱们说一下这个事情，学习不好跟上网玩游戏到底是个什么关系。直观的想，这两者当然是互斥的，毕竟玩游戏的时间多了学习的时间就少了嘛。从社会期望即成绩好出发，成绩不好这锅我认为必须由家长和社会来背，因为什么， 学生的认知能力是很弱的，当然天才不在本文讨论范围内，大多数孩子的行为、性格基本上是原生家庭的一个投射。成绩不好，是不是家长逼的太紧了？是不是剥夺了孩子跟小朋友玩的时间？是不是孩子本身就对学习不感兴趣？是不是教育制度本身就存在着很大问题？这些都是导致成绩不好的潜在深层次原因，逆着孩子的性子来会让孩子缺少成长过程中必须的一些东西，日后一有机会就可能去报复性的玩游戏。所以说，成绩不好很可能存在某些深层次的原因在里面，而这些原因导致了成绩不好和报复性玩游戏。家长凭借个人喜好错误归因是不可取的，这锅不该由“网瘾”背。</p>
+
+<p>其次是<strong>消费瘾</strong>，即有消费的冲动并且实际实施了。原生家庭的影响在前文已经作了简单叙述，这里就不提了。消费瘾显而易见，背了没钱的锅。“钱”是个敏感词汇，每个人都眼红，都想要，想要更多，没钱简直是世界上最可怕的事！可是亲爱的读者，好多的都盯着你的钱袋子，想从它里面抢钱，国家要收税要扩大内需、品牌要让你买他们的商品或服务、消费主义要洗脑你、企业要剥削你，“把钱留住”是一个非常困难的事情。有人说，控制自己不乱买东西不就行了吗，那房子你买不买？烂尾了怎么办？被套路了怎么办？房子作为大宗消费，这一件商品就抵得上个人任性地买好多东西。这个问题涉及到的范围很广就不细说了，甩锅给谁俺也不知道。总之，这个世界上除了你自己家，其他所有人和组织都不想让你留着钱，情况就都这么艰难了，就别让爱买点小东西充实业余生活的自己背锅了吧。</p>
+
+<p>最后谈<strong>信息流上瘾</strong>，和上述提到的两种瘾不同，信息流上瘾我认为是导致个人生活混乱的罪魁祸首，是会严重伤害自己的必须要连根拔除。深层次原因当然也有，比如作为让大家都安居乐业每天笑哈哈、缓和社会矛盾、抚平大众尖锐思想的手段，但这里不谈。</p>
+
+<h4 id="如何戒瘾如何解决可能是瘾导致的问题"><del>如何“戒瘾”</del>如何解决可能是“瘾”导致的问题</h4>
+
+<p>我们已经知道，很多目标失败的锅不该由很可能毫不相关的瘾来背，这里咱们谈一下如何解决可能是“瘾”导致的问题。当然，解决的前提是你真的想解决，如果你只是一时兴起，那什么方法都是没用的，脚踏实地、忍耐痛苦、克服万难才能让方法真正见效。方法也很简单，遵循五个步骤即可：认识问题→分析问题→正确归因→制定策略→解决问题。并没有什么投机取巧的办法，每个人性格情况、所处环境都不一样，不能一概而论。</p>
+
+<p>今天就先这样，共勉。</p>
+
+
+
+                <hr style="visibility: hidden;">
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2022/08/07/constraint.html" data-toggle="tooltip" data-placement="top" title="2 约束">
+                        Next<br>
+                        <span>2 约束</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+
+
+                <!--Gitalk评论start  -->
+                
+                <!-- 引入Gitalk评论插件  -->
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+                <div id="gitalk-container"></div>
+                <script type="text/javascript">
+                    var gitalk = new Gitalk({
+                    clientID: 'd9f64754eef6e3df1fa2',
+                    clientSecret: 'b01d750b22ff86b9ce89644354f722588278cdb0',
+                    repo: 'Fr3027.github.io',
+                    owner: 'Fr3027',
+                    admin: ['Fr3027'],
+                    id: window.location.pathname,
+                    });
+                    gitalk.render('gitalk-container');
+                </script>
+                
+                <!-- Gitalk end -->
+
+                
+
+
+            </div>  
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags.html">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                            
+                				<a href="/tags.html#感悟" title="感悟" rel="2">
+                                    感悟
+                                </a>
+                            
+        				
+        			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+
+                    <!-- add Weibo, Zhihu, add target = "_blank" to <a> -->
+                    
+                    
+
+
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/Fr3027">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; xx Rui Blog 2022
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.min.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;    
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+</body>
+
+</html>

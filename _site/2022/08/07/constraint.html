@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="全栈开发 | 不可知论者 | xx锐，Web & Full-stack Engineer | xx锐的个人博客啊">
+    <meta name="keyword"  content="xx Rui, 后端, 全栈, xx锐 Blog, 博客，Web, Css, Javascript, Java">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <title>2 约束 - xx锐的博客 | xx Rui Blog</title>
+
+    <link rel="canonical" href="http://localhost:4000/2022/08/07/constraint.html">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">xx Rui Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tags.html">Tags</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background: url('/img/algorithm/bg.jpg') center center no-repeat;
+        background-size: 100%;
+    }
+
+    
+    header.intro-header .header-mask{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgba(0,0,0, 0.5);
+    }
+    
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#感悟" title="感悟">感悟</a>
+                        
+                    </div>
+                    <h1>2 约束</h1>
+                    
+                    
+                    <h2 class="subheading"></h2>
+                    
+                    <span class="meta">Posted by xx锐 on August 7, 2022</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+				<blockquote>
+  <p>人生而自由，却又无往不位于枷锁之中                  ——卢梭</p>
+</blockquote>
+
+<h4 id="前言">前言</h4>
+<p>大家好我是xx锐，上面这句话我个人非常喜欢，今天咱们就来聊一聊自由与约束，接下来首先我会给出两个词的定义，然后结合卢梭的这句话分析自由和约束这两者是个什么关系，最后咱们谈一下以上分析对现实生活有什么指导意义。</p>
+
+<h4 id="定义">定义</h4>
+
+<p>上维基百科一查可不得了，自由有超过10种定义：</p>
+
+<ol>
+  <li>意指由<a href="https://zh.wikipedia.org/wiki/憲法">宪法</a>或<a href="https://zh.wikipedia.org/wiki/基本法">基本法</a>所保障的一种权利或自由权，包括政府在内任何人都不可以起诉或以莫须有的罪名而拘捕扣留任何人。(<a href="https://zh.wikipedia.org/wiki/人身自由">人身自由</a>)[<a href="https://zh.wikipedia.org/wiki/自由#cite_note-1">1]</a></li>
+  <li>把个人或集体从某些(非)政府的私权力中解放， 如<a href="https://zh.wikipedia.org/wiki/奴隶主">奴隶主</a>、<a href="https://zh.wikipedia.org/wiki/父母">父母</a>、<a href="https://zh.wikipedia.org/wiki/伴侶">伴侣</a>、<a href="https://zh.wikipedia.org/wiki/軍閥">军阀</a>、<a href="https://zh.wikipedia.org/wiki/地主">地主</a>、<a href="https://zh.wikipedia.org/wiki/资本家">资本家</a>、<a href="https://zh.wikipedia.org/wiki/裙帶資本主義">官僚资本家</a>等。</li>
+  <li>尽可能地以法律保障与赋以相对应之义务，让最大多数人拥有说出属于他们的言论之自由。(<a href="https://zh.wikipedia.org/wiki/言論自由">言论自由</a>)</li>
+  <li>自律(英语：autonomous)意义下的自由。<a href="https://zh.wikipedia.org/wiki/伊曼努尔·康德">康德</a>在此意义上使用自由一词。</li>
+  <li>是人在自己所拥有的领域自主追求自己设定目标的<a href="https://zh.wikipedia.org/wiki/权利">权利</a>。</li>
+  <li>在不妨碍他人同等自由的前提下，个人运用自身和自身所具有的能力从事一切活动的权利（<a href="https://zh.wikipedia.org/wiki/正义论">正义论</a>）。</li>
+  <li>不干涉别人的私人生活，只要不危害旁人就不应当禁制，如个人的<a href="https://zh.wikipedia.org/wiki/私有財產">私有财产</a>、<a href="https://zh.wikipedia.org/wiki/私隱">隐私</a>、<a href="https://zh.wikipedia.org/wiki/性取向">性取向</a>、<a href="https://zh.wikipedia.org/wiki/信仰">信仰</a>、<a href="https://zh.wikipedia.org/wiki/政治">政治</a>主张、<a href="https://zh.wikipedia.org/wiki/嗜好">嗜好</a>，以及对他人有利的公共及<a href="https://zh.wikipedia.org/wiki/國有">国有财产</a>、价值观。但对于怎样界定有严重的分歧，这也是道德放纵和自律的定义标准问题。</li>
+  <li>将被外国所<a href="https://zh.wikipedia.org/wiki/侵略">侵略</a>的<a href="https://zh.wikipedia.org/wiki/殖民地">殖民地</a>或<a href="https://zh.wikipedia.org/wiki/領土">领土</a>，恢复<a href="https://zh.wikipedia.org/wiki/獨立">独立</a>或归还原有国家的。</li>
+  <li>不具有<a href="https://zh.wikipedia.org/wiki/性別意識">性别意识</a>、思想，认为<a href="https://zh.wikipedia.org/wiki/性別">性别</a>是对自己的<a href="https://zh.wikipedia.org/wiki/人身自由">人身自由</a>的一种限制。</li>
+  <li><a href="https://zh.wikipedia.org/wiki/无政府主义">反对政府</a>和法律，主张无限私权、为所欲为，认为文明和制度是对人的限制，甚至可以在能力范围内任意互相侵害。</li>
+</ol>
+
+<p>而<a href="https://zh.wikipedia.org/wiki/法国大革命">法国大革命</a>纲领性文件《<a href="https://zh.wikipedia.org/wiki/人权和公民权宣言">人权宣言</a>》中，对自由的定义为：</p>
+
+<blockquote>
+  <p>自由即有权做一切无害于他人的任何事情。</p>
+</blockquote>
+
+<p><a href="https://zh.wikipedia.org/wiki/第二次世界大战">第二次世界大战</a>中（1941年1月6日），美国总统<a href="https://zh.wikipedia.org/wiki/富兰克林·德拉诺·罗斯福">罗斯福</a>在国情咨文中提出了著名的“<a href="https://zh.wikipedia.org/wiki/四大自由_(羅斯福)">四大自由</a>”[<a href="https://zh.wikipedia.org/wiki/自由#cite_note-3">3]</a>。</p>
+
+<blockquote>
+  <p>在未来的日子里，我们向往并需要确保一个由必要的人类自由构成的世界： 第一，言论与表达的自由——在世界上的所有地方。 第二，一切人民以自己的方式崇拜他们神祇的自由——在世界上的所有地方。 第三，免于匮乏的自由——以世界性的角度来说，可使每一个国家的所有居民享受在和平时期健康生活的经济基础——在世界上的所有地方。 第四，免于恐惧的自由——以世界性的角度来说，全球的兵力削减以至于任何国家都没有对其邻邦进行武力入侵的可能——在世界上的任何地方。</p>
+</blockquote>
+
+<p>简略来说，这四大自由便是<a href="https://zh.wikipedia.org/wiki/言論自由">言论自由</a>、<a href="https://zh.wikipedia.org/wiki/宗教自由">宗教自由</a>、<a href="https://zh.wikipedia.org/wiki/免于匮乏的自由">免于匮乏的自由</a>和<a href="https://zh.wikipedia.org/wiki/免於恐懼的自由">免于恐惧的自由</a>。</p>
+
+<p><a href="https://zh.wikipedia.org/wiki/联合国">联合国</a><a href="https://zh.wikipedia.org/wiki/世界人权宣言">世界人权宣言</a>重申了这四大自由的精神：“人人享有言论和信仰自由并免于恐惧和匮乏”(《<a href="https://zh.wikisource.org/wiki/世界人權宣言">世界人权宣言</a>》)。</p>
+
+<p>20世纪下半叶，<a href="https://zh.wikipedia.org/wiki/以赛亚·伯林">以赛亚·伯林</a>开始用“两种自由”的概念来划分自由：“<a href="https://zh.wikipedia.org/wiki/消极自由">消极自由</a>”和“<a href="https://zh.wikipedia.org/wiki/积极自由">积极自由</a>”。他认为，积极自由是指人在“主动”意义上的自由，即作为<a href="https://zh.wikipedia.org/wiki/主体">主体</a>的人做的决定和选择，均基于自身的主动意志而非任何外部力量。当一个人是自主的或自决的，他就处于“积极”自由的状态之中。这种自由是“去做……的自由”。而消极自由指的是在“被动”意义上的自由。即人在意志上不受他人的强制，在行为上不受他人的干涉，也就是“免于强制和干涉”的状态。以赛亚·伯林认为：“民主就是：认为促进社会公义和个人自由，未必意味着有效管治不再存在；权力和秩序并不等于要受到经济或政治教条的束缚；而个人自由——社会一个松散的特质——与不可或缺的最少量组织和权力是可以调和的。”</p>
+
+<h4 id="分析">分析</h4>
+
+<p>可以见到，自由的定义很多而且很模糊，比如法国革命《人权宣言》中定义了自由就是有权力干无害于他人的任何事情，什么是无害于他人的事情？这个标准该如何界定？主观意图不希望伤害别人但由于某种因果最终伤害了别人，这是自由吗？</p>
+
+<p>而且大家可以发现，很多自由的定义来源于革命，很多价值观、宣言、纲领都有自由的身影，想一想这是为什么。接受九年义务教育的我们都知道，大型政治运动的进行不仅需要物质武器也需要精神武器，枪和子弹要有，笔杆子也要有，民众平日里就是一盘散沙，矛盾爆发了能冲上来扔把沙子，但这还不够，单打独斗是干不成什么大事的，必须要团结。关键时刻革命领导者打出自由这面旗帜，大家心往一处想、劲往一处使，凝聚出一股强大的力量，形成摧枯拉朽之势，摧毁一切敌人。</p>
+
+<p>可是仔细想一想，这些自由言论的提出者…真的保证民众的自由了吗？就拿罗斯福画的大饼：四大自由来说。</p>
+
+<ul>
+  <li>言论自由，任何人都有说话的权力，的确美国专门有个宪法第一修正案确保每个人都能发声，而且政府不会派人抓你，听起来不错。但话语是有权力的，就算马斯克说地球是方的，很多人也会相信，而这话要由我来说，别人只会当我是个傻子。所以其实我认为美国的两大社交平台：推特和脸书控制了话语权，同时也规避了第一修正案，这些人通过向自己阵营的言论分配更多的曝光度，宣扬更多对自己有利的政策和思想，调整搜索引擎排名，隐藏掉一部分对手阵营的内容从而造成了<strong>话语权的不平等</strong>。</li>
+  <li>宗教自由，这点我承认。</li>
+  <li>免于匮乏、免于恐惧的自由，这点听了我都想笑。。你美国发战争财，随便找个理由就打别人国家，利用自身优势占据经济全球化的有利位置，吸其他国家的血，肆意侵犯别国内政，就这还说什么要让世界上所有国家和地区拥有免于匮乏和免于恐惧的自由？难道你扶持自己政权、搞分裂别人国家还要谢谢你给了他们自由吗？笑话。</li>
+</ul>
+
+<p>综上，除了宗教自由，其他三个自由，我都不承认。要打仗了给小兵画上大饼，许诺自由平等，最后胜利了就吃点土，这里我也要对自由下个定义：<strong>自由是统治者团结和利用民众的工具。</strong></p>
+
+<p>说了这么多，咱们可以发现，也许自由是个谎言，那么卢梭说的这句话又是什么意思呢？他所指的自由又是什么呢？请接着往下看。</p>
+
+<p>这句话后边还有一句，完整的应该是：<strong>“人生而自由，却又无往不位于枷锁之中。自以为是其他一切的主人的人，反而比其他一切更是奴隶”</strong>。咱们一句一句看，首先“人生而自由，他应该是想表达，每个人生来就应该享有自有的权利，这是一种理想主义。下面“却又无往不位于枷锁之中”，看来是理想很美好，现实很骨感。后半句“自以为是其他一切主人的人，反而比一切更是奴隶”，这句我理解是，现实是残酷的，人的自由被很多枷锁所限制，<strong>但我们要抗争，要认识到自已的不自由，然后努力做到自由</strong>，去拒绝、去反抗、去要求。觉得自已完全自由了的人，估计是受了太大刺激人傻了，或者被人切除了额叶从而丧失了思考的能力，每天笑哈哈的。咱们可以把自由比作无穷大，是永远达不到的目标，我觉得卢梭这句话就是想强调这个<strong>挣扎的过程</strong>。</p>
+
+<p>到现在只谈了谈自由，约束没聊，指导意义也没聊，但是现在是晚上6点钟了有点累了不想写了，改天再继续。</p>
+
+
+
+                <hr style="visibility: hidden;">
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2022/08/06/addiction.html" data-toggle="tooltip" data-placement="top" title="1 成瘾">
+                        Previous<br>
+                        <span>1 成瘾</span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+
+
+                <!--Gitalk评论start  -->
+                
+                <!-- 引入Gitalk评论插件  -->
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+                <div id="gitalk-container"></div>
+                <script type="text/javascript">
+                    var gitalk = new Gitalk({
+                    clientID: 'd9f64754eef6e3df1fa2',
+                    clientSecret: 'b01d750b22ff86b9ce89644354f722588278cdb0',
+                    repo: 'Fr3027.github.io',
+                    owner: 'Fr3027',
+                    admin: ['Fr3027'],
+                    id: window.location.pathname,
+                    });
+                    gitalk.render('gitalk-container');
+                </script>
+                
+                <!-- Gitalk end -->
+
+                
+
+
+            </div>  
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags.html">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                            
+                				<a href="/tags.html#感悟" title="感悟" rel="2">
+                                    感悟
+                                </a>
+                            
+        				
+        			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+
+                    <!-- add Weibo, Zhihu, add target = "_blank" to <a> -->
+                    
+                    
+
+
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/Fr3027">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; xx Rui Blog 2022
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.min.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;    
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+</body>
+
+</html>

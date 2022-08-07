@@ -1,0 +1,6 @@
+
+.jekyll-cache/
+
+.DS_Store
+
+*.lock
