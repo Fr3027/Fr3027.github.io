@@ -1,13 +1,13 @@
 ---
 layout:     post
-title:      "[今日算法] 经典的数据结构实现（js版）"
+title:      "1 成瘾"
 subtitle:   ""
-author:     "wml"
+author:     "xx锐"
 header-img: "img/algorithm/bg.jpg"
 header-mask:  0.5
 catalog: true
 tags:
-    - 算法
+    - 感悟 
 ---
 
 大家好我是xx锐，今天咱们来聊一聊成瘾这件事，平日里大家都有许多经历，比如网瘾、消费瘾、信息流瘾，咱们把类似这种**做了让自己爽还想接着做的事情统称为瘾**，这样的事情有很多并且每个人情况不一样也就不一一举例了。下面，咱们谈谈“成瘾”有哪些积极作用有消极作用和如何“戒瘾”。
