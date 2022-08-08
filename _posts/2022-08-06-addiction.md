@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "1 成瘾"
+title:      "1 瘾"
 subtitle:   ""
 author:     "锐"
 header-img: "img/algorithm/bg.jpg"

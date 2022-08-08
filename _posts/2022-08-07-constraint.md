@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "2 约束"
+title:      "2 自由与约束"
 subtitle:   ""
 author:     "锐"
 header-img: "img/posts/constraint.jpeg"
