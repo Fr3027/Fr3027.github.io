@@ -17,7 +17,7 @@ tags:
 > ### 站在巨人的肩膀上，看得比較遠
 
 
-![35551660730004_.pic](/img/qingdao/35551660730004_.pic.jpg)
+![WechatIMG3555](/img/qingdao/WechatIMG3555.jpeg)
 
 ![WechatIMG3556](/img/qingdao/WechatIMG3556.jpeg)
 
