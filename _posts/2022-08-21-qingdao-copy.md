@@ -3,7 +3,7 @@ layout:     post
 title:      "8 青岛"
 subtitle:   ""
 author:     "锐"
-header-img: "img/algorithm/bg.jpg"
+header-img: "img/qingdao/WechatIMG120.jpeg"
 header-mask:  0.58
 catalog: true
 tags:
