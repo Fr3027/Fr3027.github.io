@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "13 职业睡人"
+title:      "11 职业睡人"
 subtitle:   ""
 author:     "锐"
 header-img: "img/bad-money-drives-out-good.jpeg"
