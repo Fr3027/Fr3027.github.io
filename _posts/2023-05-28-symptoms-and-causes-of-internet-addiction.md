@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "14 乱世之中如何获得内心平静?"
+title:      "15 网瘾的成因和表现"
 subtitle:   ""
 author:     "锐"
 header-mask:  0.58
